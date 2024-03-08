@@ -20,7 +20,8 @@ const limiter = rateLimit({
     standardHeaders: 'draft-7', 
     legacyHeaders: false,
 })
-app.use(morgan("dev"));
+app.set('trust proxy', true);
+// app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
